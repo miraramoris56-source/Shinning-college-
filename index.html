@@ -1,0 +1,187 @@
+<!-- ============================================
+     FILE: index.html
+     LOCATION: Root of repository
+     ============================================ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shining Star College | Illuminate Your Future</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">✨ Shining Star <span>College</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#programs">Programs</a></li>
+        <li><a href="#campus">Campus</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li id="authArea">
+          <button class="btn btn-outline" onclick="openModal('login')">Login</button>
+          <button class="btn btn-primary" onclick="openModal('register')">Apply Now</button>
+        </li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="badge"><i class="fas fa-graduation-cap"></i> Excellence Since 1995</span>
+      <h1>Ignite Your <span class="highlight">Potential</span> at Shining Star</h1>
+      <p>World-class education, vibrant community, and a future as bright as you.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" onclick="openModal('register')">
+          <i class="fas fa-arrow-right"></i> Start Application
+        </button>
+        <a href="#programs" class="btn btn-outline">Explore Programs</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-placeholder">🎓</div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="stats">
+    <div class="stat-card"><h3>4,200+</h3><p>Students</p></div>
+    <div class="stat-card"><h3>150+</h3><p>Faculty</p></div>
+    <div class="stat-card"><h3>35+</h3><p>Partners</p></div>
+    <div class="stat-card"><h3>97%</h3><p>Placement</p></div>
+  </section>
+
+  <!-- ============ PROGRAMS ============ -->
+  <section class="programs" id="programs">
+    <h2>Our Academic Programs</h2>
+    <p class="subtitle">Cutting-edge curriculum designed for tomorrow's leaders</p>
+    <div class="program-grid">
+      <div class="program-card">
+        <div class="icon">📊</div>
+        <h3>Data Science & AI</h3>
+        <p>Machine learning, big data analytics, and modern AI.</p>
+        <button class="btn btn-primary" onclick="applyProgram('Data Science & AI')">Apply</button>
+      </div>
+      <div class="program-card">
+        <div class="icon">💼</div>
+        <h3>Business & Finance</h3>
+        <p>Global economics, investment, and entrepreneurship.</p>
+        <button class="btn btn-primary" onclick="applyProgram('Business & Finance')">Apply</button>
+      </div>
+      <div class="program-card">
+        <div class="icon">🎨</div>
+        <h3>Creative Arts & Media</h3>
+        <p>Digital storytelling, design, and content creation.</p>
+        <button class="btn btn-primary" onclick="applyProgram('Creative Arts & Media')">Apply</button>
+      </div>
+      <div class="program-card">
+        <div class="icon">🔬</div>
+        <h3>Biotech & Health Sciences</h3>
+        <p>Research-driven curriculum for health innovators.</p>
+        <button class="btn btn-primary" onclick="applyProgram('Biotech & Health Sciences')">Apply</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAMPUS ============ -->
+  <section class="campus" id="campus">
+    <h2>Life at Shining Star</h2>
+    <p class="subtitle">A vibrant community where learning meets inspiration</p>
+    <div class="campus-grid">
+      <div class="campus-card">📚 Smart Library</div>
+      <div class="campus-card">🏀 Sports Complex</div>
+      <div class="campus-card">🧪 Modern Labs</div>
+      <div class="campus-card">🌍 Global Exchange</div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch</h2>
+    <p class="subtitle">We'd love to hear from you</p>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="email" id="contactEmail" placeholder="Your Email" required>
+      <input type="text" id="contactSubject" placeholder="Subject" required>
+      <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>✨ Shining Star College</h3>
+        <p>Empowering minds, shaping futures.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>📞 +1 (800) 555-STAR</p>
+        <p>✉️ info@shiningstar.edu</p>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p>123 Star Boulevard</p>
+        <p>Knowledge City</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Shining Star College. All rights reserved.</div>
+  </footer>
+
+  <!-- ============ LOGIN MODAL ============ -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('login')">&times;</span>
+      <h2>Login</h2>
+      <div class="alert" id="loginAlert"></div>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Password" required>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+      <p class="switch">No account? <a href="#" onclick="switchModal('register')">Register</a></p>
+    </div>
+  </div>
+
+  <!-- ============ REGISTER MODAL ============ -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('register')">&times;</span>
+      <h2>Register</h2>
+      <div class="alert" id="registerAlert"></div>
+      <form id="registerForm">
+        <input type="text" id="registerName" placeholder="Full Name" required>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Password (min 6 chars)" required>
+        <select id="registerRole">
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+      <p class="switch">Have account? <a href="#" onclick="switchModal('login')">Login</a></p>
+    </div>
+  </div>
+
+  <!-- ============ DASHBOARD MODAL ============ -->
+  <div class="modal" id="dashboardModal">
+    <div class="modal-content wide">
+      <span class="close" onclick="closeModal('dashboard')">&times;</span>
+      <h2>My Dashboard</h2>
+      <div id="dashboardContent">Loading...</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+    </html>
